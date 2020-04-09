@@ -43,7 +43,7 @@ class TwoLayerMLP:
 
     @staticmethod
     def softmax(Z):
-        # Transposing is to allow for row-wise operations (with built-in np broadcasting)
+        # Transposing is to allow for row-wise operations (with built-in broadcasting)
         Z_0_transpose = Z.t() - Z.max()
         Y_hat_transpose = torch.exp(Z_0_transpose)
         Y_hat_transpose /= Y_hat_transpose.sum(0)
